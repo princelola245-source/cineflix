@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <title>CineFlix</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="navbar-container">
+      <div class="logo-container">
+        <h1 class="logo">CineFlix</h1>
+      </div>
+
+      <div class="menu-container">
+        <ul class="menu-list">
+          <li class="menu-list-item active"><a class="menu-link" href="#home">Home</a></li>
+          <li class="menu-list-item"><a class="menu-link" href="#movies">Movies</a></li>
+          <li class="menu-list-item"><a class="menu-link" href="#series">Series</a></li>
+          <li class="menu-list-item"><a class="menu-link" href="#popular">Popular</a></li>
+          <li class="menu-list-item"><a class="menu-link" href="#trends">Trends</a></li>
+        </ul>
+      </div>
+
+      <!-- ✅ SEARCH BAR -->
+      <div class="search-container">
+        <i class="fas fa-search search-icon" aria-hidden="true"></i>
+        <input id="movieSearch" class="search-input" type="text" placeholder="Search movies / series..."
+          autocomplete="off" />
+        <button id="clearSearch" class="search-clear" type="button" aria-label="Clear search">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+   
+    <i class="left-menu-icon fas fa-home" title="Home"></i>
+    <i class="left-menu-icon fas fa-users" title="Users"></i>
+    <i class="left-menu-icon fas fa-bookmark" title="Bookmarks"></i>
+    <i class="left-menu-icon fas fa-tv" title="TV"></i>
+    <i class="left-menu-icon fas fa-hourglass-start" title="Watch Later"></i>
+    <i class="left-menu-icon fas fa-shopping-cart" title="Cart"></i>
+  </div>
+
+  <div class="container" id="home">
+    <div class="content-container">
+
+      <div class="featured-content"
+        style="background: linear-gradient(to bottom, rgba(0,0,0,0), #0b0b0f), url('img/f-1.jpg');">
+        <img class="featured-title" src="img/f-t-1.png" alt="" />
+        <p class="featured-desc">
+          Django, a freed slave,Django sets out on a daring mission to save his wife from a ruthless plantation owner.
+          With bullets, bravery, and a sharp plan, nothing can stop him.
+        </p>
+        <button class="featured-button">WATCH</button>
+      </div>
+
+      <!-- ✅ SEARCH RESULTS (shows at top while searching) -->
+      <div class="search-results" id="searchResults" aria-live="polite" hidden>
+        <div class="section-head">
+          <h1 class="movie-list-title">Search Results</h1>
+          <p class="section-subtitle" id="resultsMeta">Type to search…</p>
+        </div>
+
+        <div class="movie-list-wrapper">
+          <div class="movie-list" id="resultsList"></div>
+        </div>
+      </div>
+
+   <!-- MOVIES -->
+<div class="movie-list-container" id="movies">
+  <div class="section-head">
+    <h1 class="movie-list-title">Movies</h1>
+    <p class="section-subtitle">Swipe / scroll to explore</p>
+  </div>
+
+  <div class="movie-list-wrapper">
+    <div class="movie-list">
+      <div class="movie-list-item" data-title="Interstellar"
+           data-desc="Explorers travel through a wormhole in space to save humanity.">
+        <img class="movie-list-item-img" src="img/1.jpg" alt="Interstellar">
+      </div>
+
+      <div class="movie-list-item" data-title="Inception"
+           data-desc="A thief enters dreams to steal secrets from deep within the subconscious.">
+        <img class="movie-list-item-img" src="img/2.jpg" alt="Inception">
+      </div>
+
+      <div class="movie-list-item" data-title="Avatar"
+           data-desc="A marine is torn between duty and protecting an alien planet.">
+        <img class="movie-list-item-img" src="img/3.jpg" alt="Avatar">
+      </div>
+
+      <div class="movie-list-item" data-title="The Dark Knight"
+           data-desc="Batman faces the Joker, a criminal mastermind spreading chaos.">
+        <img class="movie-list-item-img" src="img/4.jpg" alt="The Dark Knight">
+      </div>
+
+      <div class="movie-list-item" data-title="Avengers Endgame"
+           data-desc="Earth’s mightiest heroes assemble for one final battle.">
+        <img class="movie-list-item-img" src="img/5.jpg" alt="Avengers Endgame">
+      </div>
+
+      <div class="movie-list-item" data-title="Titanic"
+           data-desc="A tragic love story aboard the ill-fated RMS Titanic.">
+        <img class="movie-list-item-img" src="img/6.jpg" alt="Titanic">
+      </div>
+
+      <div class="movie-list-item" data-title="Joker"
+           data-desc="A mentally troubled man descends into madness in Gotham City.">
+        <img class="movie-list-item-img" src="img/7.jpg" alt="Joker">
+      </div>
+
+      <div class="movie-list-item" data-title="Oppenheimer"
+           data-desc="The story of the man behind the atomic bomb.">
+        <img class="movie-list-item-img" src="img/15.jpg" alt="Oppenheimer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERIES -->
+<div class="movie-list-container" id="series">
+  <div class="section-head">
+    <h1 class="movie-list-title">Series</h1>
+    <p class="section-subtitle">Swipe / scroll to explore</p>
+  </div>
+
+  <div class="movie-list-wrapper">
+    <div class="movie-list">
+      <div class="movie-list-item" data-title="Stranger Things"
+           data-desc="Kids uncover supernatural mysteries in a small town.">
+        <img class="movie-list-item-img" src="img/8.jpg" alt="Stranger Things">
+      </div>
+
+      <div class="movie-list-item" data-title="Money Heist"
+           data-desc="A mastermind plans the biggest heist in Spanish history.">
+        <img class="movie-list-item-img" src="img/9.jpg" alt="Money Heist">
+      </div>
+
+      <div class="movie-list-item" data-title="Breaking Bad"
+           data-desc="A chemistry teacher becomes a powerful drug kingpin.">
+        <img class="movie-list-item-img" src="img/10.jpg" alt="Breaking Bad">
+      </div>
+
+      <div class="movie-list-item" data-title="The Witcher"
+           data-desc="A monster hunter struggles to find his destiny.">
+        <img class="movie-list-item-img" src="img/11.jpg" alt="The Witcher">
+      </div>
+
+      <div class="movie-list-item" data-title="Game of Thrones"
+           data-desc="Noble families fight for control of the Iron Throne.">
+        <img class="movie-list-item-img" src="img/12.jpg" alt="Game of Thrones">
+      </div>
+
+      <div class="movie-list-item" data-title="Dune Part Two"
+           data-desc="Paul Atreides rises to fulfill his destiny among the Fremen.">
+        <img class="movie-list-item-img" src="img/17.jpg" alt="Dune Part Two">
+      </div>
+
+      <div class="movie-list-item" data-title="Barbie"
+           data-desc="A doll’s journey of self-discovery in the real world.">
+        <img class="movie-list-item-img" src="img/18.jpg" alt="Barbie">
+      </div>
+
+      <div class="movie-list-item" data-title="John Wick Chapter 4"
+           data-desc="A legendary assassin fights for his freedom.">
+        <img class="movie-list-item-img" src="img/19.jpg" alt="John Wick Chapter 4">
+      </div>
+
+      <div class="movie-list-item" data-title="Joker"
+           data-desc="A mentally troubled man descends into madness in Gotham City.">
+        <img class="movie-list-item-img" src="img/7.jpg" alt="Joker">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- POPULAR -->
+     <!-- POPULAR -->
+<div class="movie-list-container" id="popular">
+  <div class="section-head">
+    <h1 class="movie-list-title">Popular</h1>
+    <p class="section-subtitle">Swipe / scroll to explore</p>
+  </div>
+
+  <div class="movie-list-wrapper">
+    <div class="movie-list">
+      <div class="movie-list-item" data-title="Interstellar"
+           data-desc="Explorers travel through a wormhole in space to save humanity.">
+        <img class="movie-list-item-img" src="img/1.jpg" alt="Interstellar">
+      </div>
+
+      <div class="movie-list-item" data-title="Inception"
+           data-desc="A thief enters dreams to steal secrets from deep within the subconscious.">
+        <img class="movie-list-item-img" src="img/2.jpg" alt="Inception">
+      </div>
+
+      <div class="movie-list-item" data-title="Oppenheimer"
+           data-desc="The story of the man behind the atomic bomb.">
+        <img class="movie-list-item-img" src="img/15.jpg" alt="Oppenheimer">
+      </div>
+
+      <div class="movie-list-item" data-title="Avatar"
+           data-desc="A marine is torn between duty and protecting an alien planet.">
+        <img class="movie-list-item-img" src="img/3.jpg" alt="Avatar">
+      </div>
+
+      <div class="movie-list-item" data-title="The Dark Knight"
+           data-desc="Batman faces the Joker, a criminal mastermind spreading chaos.">
+        <img class="movie-list-item-img" src="img/4.jpg" alt="The Dark Knight">
+      </div>
+
+      <div class="movie-list-item" data-title="Avengers Endgame"
+           data-desc="Earth’s mightiest heroes assemble for one final battle.">
+        <img class="movie-list-item-img" src="img/5.jpg" alt="Avengers Endgame">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRENDS -->
+<div class="movie-list-container" id="trends">
+  <div class="section-head">
+    <h1 class="movie-list-title">Trends</h1>
+    <p class="section-subtitle">Swipe / scroll to explore</p>
+  </div>
+
+  <div class="movie-list-wrapper">
+    <div class="movie-list">
+      <div class="movie-list-item" data-title="Dune Part Two"
+           data-desc="Paul Atreides rises to fulfill his destiny among the Fremen.">
+        <img class="movie-list-item-img" src="img/17.jpg" alt="Dune Part Two">
+      </div>
+
+      <div class="movie-list-item" data-title="Barbie"
+           data-desc="A doll’s journey of self-discovery in the real world.">
+        <img class="movie-list-item-img" src="img/18.jpg" alt="Barbie">
+      </div>
+
+      <div class="movie-list-item" data-title="John Wick Chapter 4"
+           data-desc="A legendary assassin fights for his freedom.">
+        <img class="movie-list-item-img" src="img/19.jpg" alt="John Wick Chapter 4">
+      </div>
+
+      <div class="movie-list-item" data-title="Joker"
+           data-desc="A mentally troubled man descends into madness in Gotham City.">
+        <img class="movie-list-item-img" src="img/7.jpg" alt="Joker">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- FOOTER -->
+      <footer class="cf-footer" id="footer">
+        <div class="cf-footer-top">
+          <div class="cf-footer-brand">
+            <div class="cf-footer-logo">Cine<span>Flix</span></div>
+            <p class="cf-footer-tagline">
+              Stream smarter. Discover movies, series, and what’s trending — all in one place.
+            </p>
+          </div>
+
+          <div class="cf-footer-cols">
+            <div class="cf-footer-col">
+              <h4>Company</h4>
+              <a href="#home">About CineFlix</a>
+              <a href="#home">Careers</a>
+              <a href="#home">Our Culture</a>
+              <a href="#home">Partners</a>
+              <a href="#home">News</a>
+              <a href="#home">The CineFlix Blog</a>
+            </div>
+
+            <div class="cf-footer-col">
+              <h4>Go Premium</h4>
+              <a href="#home">Plans</a>
+              <a href="#home">CineFlix Labs</a>
+              <a href="#home">Early Access</a>
+              <a href="#home">Get Perks</a>
+            </div>
+
+            <div class="cf-footer-col">
+              <h4>Downloads</h4>
+              <a href="#home">CineFlix App</a>
+              <a href="#home">Desktop</a>
+              <a href="#home">Mobile</a>
+              <a href="#home">Smart TV</a>
+              <a href="#home">Where to Watch</a>
+            </div>
+
+            <div class="cf-footer-col">
+              <h4>Support</h4>
+              <a href="#home">Help Center</a>
+              <a href="#home">Support Library</a>
+              <a href="#home">Community</a>
+              <a href="#home">Billing Questions</a>
+              <a href="#home">Status</a>
+              <a href="#home">Get in Touch</a>
+            </div>
+
+            <div class="cf-footer-col">
+              <h4>Watch Free</h4>
+              <a href="#movies">Discover on CineFlix</a>
+              <a href="#series">TV & Series</a>
+              <a href="#popular">What to Watch</a>
+              <a href="#trends">Trending Now</a>
+              <a href="#home">Top Picks</a>
+              <a href="#home">New Releases</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cf-footer-bottom">
+          <div class="cf-footer-legal">
+            <span>Copyright © 2025 CineFlix</span>
+            <a href="#home">Privacy & Legal</a>
+            <a href="#home">Accessibility</a>
+            <a href="#home">Manage Cookies</a>
+            <span class="cf-footer-lang">Language: English (UK)</span>
+          </div>
+
+          <div class="cf-footer-social">
+            <a href="#home" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#home" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#home" aria-label="X"><i class="fab fa-twitter"></i></a>
+            <a href="#home" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#home" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#home" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
